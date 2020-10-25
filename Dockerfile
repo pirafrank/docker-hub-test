@@ -7,5 +7,5 @@ WORKDIR /root
 COPY dummy.txt ./
 RUN echo $ARGTOBEWRITTEN > file.txt
 
-CMD ["cat","/root/*.txt"]
+CMD ["sh","-c","cat /root/*.txt"]
 
