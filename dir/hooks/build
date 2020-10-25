@@ -1,6 +1,12 @@
 #!/bin/bash
 
-source workspace_versions.sh
+#source workspace_versions.sh
+
+# get version to build from docker tag set in Docker Hub build settings
+JAVAVERSION=$(printf $DOCKER_TAG | sed 's/java//g')
+NODEVERSION=$(printf $DOCKER_TAG | sed 's/node//g')
+PYTHON3VERSION=$(printf $DOCKER_TAG | sed 's/python//g')
+RUBYVERSION=$(printf $DOCKER_TAG | sed 's/ruby//g')
 
 echo "DOCKER_TAG $DOCKER_TAG"
 echo "ARGTOBEWRITTEN $ARGTOBEWRITTEN"
